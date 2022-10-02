@@ -15,6 +15,7 @@ const axios = require('axios');
 let searchQuery = '';
 let numberPage = 1;
 let totalHits = 0;
+let lastArr = 0;
 
 refs.loadMoreBtn.classList.add("is-hidden");
 
@@ -76,6 +77,8 @@ async function getUser(q) {
 
     totalHits = response.data.totalHits
     let images = response.data.hits;
+    lastArr = response.data.hits.length;
+    
 
     imageMarkup(images);
 
@@ -103,11 +106,19 @@ async function getUser(q) {
 
 function onLoadMore() {
   
- 
- incrementPage()
+
+  incrementPage();
+   
+
   getUser(searchQuery).then(() => {
     lightbox.refresh();
 
+    if (lastArr === 0) {
+    refs.loadMoreBtn.classList.add("is-hidden");
+    return  Notiflix.Notify.warning("We're sorry, but you've reached the end of search results.");
+ }
+    
+console.log((lastArr))
     const { height: cardHeight } = document
   .querySelector(".gallery")
   .firstElementChild.getBoundingClientRect();
@@ -118,6 +129,7 @@ window.scrollBy({
 });
    
   });
+    
   
 }
 
@@ -167,5 +179,7 @@ function clearGalleryContainer() {
 }
 
 function  incrementPage() {
-   numberPage += 1;
+  numberPage += 1;
+
+  
 }
