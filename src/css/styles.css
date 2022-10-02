@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+
+
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+    margin-top: calc(-1*15px);
+    margin-left: calc(-1*15px);
+  
+}
+
+.photo-card{
+  flex-basis: calc(33.3333333333% - 30px);
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.info{
+      display: flex;
+      justify-content: space-between;
+      width: 370px;
+      
+}
+
+.gallery__image{
+    width: 370px;
+    height: 250px;
+}
+
+.load-more.is-hidden{
+  display:none;
+}
+
+
+
+.gallery__image:hover {
+  transform: scale(1.03);
+}
+
+
+.search-form{
+  display: flex;
+  justify-content: center;
+  font: inherit;
+  padding: 20px;
+  
+  margin-bottom: 16px;
+  text-align: center;
+  background-color: #3681be;
+  width: 100%;
+}
+
+.search-form_input{ 
+  
+  border: 1px solid #ffffff;
+  
+    background: #ffffff;
+    outline: none;
+    height: 35px;
+    width: 200px;
+    font-size: 16px;
+    border-right: none;
+    padding: 5px;
+  
+}
+
+button[type="submit"]{
+  margin-left: -7px;
+  border: none;
+
+
+  background-image: url(../images/search-icon.png);
+  width: 35px;
+  height: 35px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 70%;
+    padding: 3px;
+    border: none;
+    cursor: pointer;
+  
+  
+}
+
+button[type="submit"]:hover{
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+
+button[type="button"]{
+  margin-left: auto;
+  margin-right: auto;
+
+      display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+
+ width: 200px;
+ height: 50px;
+ color: #fafafa;
+ background-color: rgb(85, 129, 211);
+ border: none;
+cursor: pointer;
+ 
+}
+
+button[type="button"]:hover{
+  color: rgb(85, 129, 211);
+    background-color:#d3d2e2;
+    border: 1px solid rgb(85, 129, 211) ;
+    border-radius: 5px;
+    
+   }
+    
