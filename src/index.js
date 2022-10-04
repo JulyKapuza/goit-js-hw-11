@@ -124,7 +124,7 @@ function onLoadMore() {
 
     if (numberPage === 13) {
      refs.loadMoreBtn.classList.add("is-hidden");
-      Notiflix.Notify.info("Thats all, enter another requet");
+      Notiflix.Notify.info("Thats all, enter another request");
   }
     
     const { height: cardHeight } = document
