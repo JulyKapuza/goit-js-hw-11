@@ -50,7 +50,7 @@ function onSearch(e) {
       }
      
       refs.searchForm.reset()
-      numberPage += 1;
+      // numberPage += 1;
       lightbox.refresh();
       
     }
@@ -99,7 +99,9 @@ async function getUser(q) {
     
 
   } catch (error) {
-    console.error(error);
+
+    console.log(error)
+      
   }
 }
 
@@ -113,12 +115,18 @@ function onLoadMore() {
   getUser(searchQuery).then(() => {
     lightbox.refresh();
 
-    if (lastArr === 0) {
+    if (lastArr < 40) {
     refs.loadMoreBtn.classList.add("is-hidden");
     return  Notiflix.Notify.warning("We're sorry, but you've reached the end of search results.");
  }
     
-console.log((lastArr))
+    console.log((lastArr));
+
+    if (numberPage === 13) {
+     refs.loadMoreBtn.classList.add("is-hidden");
+      Notiflix.Notify.info("Thats all, enter another requet");
+  }
+    
     const { height: cardHeight } = document
   .querySelector(".gallery")
   .firstElementChild.getBoundingClientRect();
